@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/nav/ThemeToggle";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { cn } from "@/lib/utils";
 
-export function Navbar() {
+export function Navbar({ isLoading }: { isLoading?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
 
@@ -27,7 +27,10 @@ export function Navbar() {
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
-      animate={{ y: hidden ? -100 : 0, opacity: 1 }}
+      animate={{
+        y: isLoading ? -100 : (hidden ? -100 : 0),
+        opacity: isLoading ? 0 : 1,
+      }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-500",

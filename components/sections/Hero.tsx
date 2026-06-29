@@ -19,7 +19,7 @@ import { Magnetic } from "@/components/ui/Magnetic";
 
 const revealEase: [number, number, number, number] = [0.33, 1, 0.68, 1];
 
-export function Hero() {
+export function Hero({ isLoading }: { isLoading?: boolean }) {
   const [timeStr, setTimeStr] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -74,7 +74,7 @@ export function Hero() {
           <div className="overflow-hidden">
             <motion.span
               initial={{ y: "100%" }}
-              animate={{ y: "0%" }}
+              animate={isLoading ? { y: "100%" } : { y: "0%" }}
               transition={{ duration: 1, ease: revealEase, delay: 0.15 }}
               className="flex items-center gap-4 font-mono text-xs uppercase tracking-[0.25em] text-white/40"
             >
@@ -86,7 +86,7 @@ export function Hero() {
           <div className="overflow-hidden">
             <motion.span
               initial={{ y: "100%" }}
-              animate={{ y: "0%" }}
+              animate={isLoading ? { y: "100%" } : { y: "0%" }}
               transition={{ duration: 1, ease: revealEase, delay: 0.15 }}
               className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/35"
             >
@@ -110,7 +110,7 @@ export function Hero() {
                   <div key={idx} className="overflow-hidden pb-[0.05em] md:pb-[0.08em]">
                     <motion.div
                       initial={{ y: "115%" }}
-                      animate={{ y: "0%" }}
+                      animate={isLoading ? { y: "115%" } : { y: "0%" }}
                       transition={{
                         duration: 1.2,
                         ease: revealEase,
@@ -141,7 +141,7 @@ export function Hero() {
           <div className="max-w-md">
             <motion.p
               initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isLoading ? { opacity: 0, y: 15 } : { opacity: 1, y: 0 }}
               transition={{ delay: 0.85, duration: 0.9, ease: revealEase }}
               className="text-sm leading-relaxed text-white/45"
             >

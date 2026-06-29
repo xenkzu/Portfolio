@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Navbar } from "@/components/nav/Navbar";
 import { Loader } from "@/components/ui/Loader";
 import { Cursor } from "@/components/ui/Cursor";
@@ -12,14 +15,16 @@ import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <Loader />
+      <Loader onComplete={() => setIsLoading(false)} />
       <Cursor />
       <Grain />
-      <Navbar />
+      <Navbar isLoading={isLoading} />
       <main>
-        <Hero />
+        <Hero isLoading={isLoading} />
         <Manifesto />
         <WorkGrid />
         <Stats />
