@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --surface: #0a0a0a;
+  --ink: #0f0f0f;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.16);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smoother: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-precise: cubic-bezier(0.76, 0, 0.24, 1);
+  --font-serif: "Instrument Serif", Georgia, serif;
+}
+
+* {
+  border-color: var(--hairline);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+body {
+  font-feature-settings: "ss01", "cv01", "cv03", "cv11";
+}
+
+/* Hide native cursor only on devices that support fine pointers */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Loader scroll lock — tied to <html> class for robustness with Lenis */
+html.yk-loading,
+html.yk-loading body {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+/* ---------- Typography helpers ---------- */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.eyebrow-code {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Code-layer reveal: elements show only in code mode */
+.code-only {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-smoother);
+}
+[data-theme="code"] .code-only {
+  opacity: 1;
+}
+
+/* Creative-only: hidden when in code layer */
+.creative-only {
+  opacity: 1;
+  transition: opacity 0.5s var(--ease-smoother);
+}
+[data-theme="code"] .creative-only {
+  opacity: 0;
+}
+
+/* Grid overlay shown in code mode */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-smoother);
+  background-image:
+    linear-gradient(to right, var(--hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--hairline) 1px, transparent 1px);
+  background-size: calc(100vw / 12) 100vh;
+}
+[data-theme="code"] .grid-overlay {
+  opacity: 0.5;
+}
+
+/* ---------- Animation primitives ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+/* Stagger children via data-stagger container */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal],
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  body {
+    cursor: auto;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "yash-kaul-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource/instrument-serif": "^5.2.8",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.0",
+    "geist": "^1.7.2",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
+    "next": "^14.2.33",
+    "ogl": "^1.0.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.5.4"
+  }
+}
