@@ -16,7 +16,7 @@ const config: Config = {
         hairline: "rgba(255,255,255,0.08)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-instrument-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
         serif: ['"Instrument Serif"', "Georgia", "serif"],
       },

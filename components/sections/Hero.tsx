@@ -101,7 +101,7 @@ export function Hero({ isLoading }: { isLoading?: boolean }) {
             style={{ y: yRecede, opacity: opacityRecede, filter: filterRecede }}
           >
             <h1 className="max-w-6xl select-none">
-              <span className="sr-only">Design that moves — and ships.</span>
+              <span className="sr-only">Design that moves and ships.</span>
               <div
                 aria-hidden="true"
                 className="font-medium leading-[0.9] tracking-[-0.04em] text-[clamp(3rem,10.5vw,10rem)]"

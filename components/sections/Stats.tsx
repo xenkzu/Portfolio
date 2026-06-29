@@ -78,26 +78,35 @@ export function Stats() {
   return (
     <Section id="stats" className="border-t border-white/10 bg-surface">
       <div ref={sectionRef as React.RefObject<HTMLDivElement>}>
-        <span className="mb-16 block font-mono text-xs uppercase tracking-[0.25em] text-white/40">
-          <span className="code-only">// </span>
-          03 — By the numbers
-        </span>
+        <div className="mb-12 flex items-end justify-between md:mb-16">
+          <div>
+            <span className="mb-6 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.25em] text-white/40 md:mb-8">
+              <span className="h-px w-12 bg-white/25" />
+              <span className="code-only">// </span>03 / By the numbers
+            </span>
+            <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-medium leading-[0.95] tracking-[-0.04em]">
+              The receipts,
+              <br />
+              <span className="font-serif text-white/50 italic">so far.</span>
+            </h2>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-16 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4 md:gap-y-16">
           {stats.map((stat, i) => {
             const { num, suffix } = parseStat(stat.value);
             return (
               <div
                 key={i}
                 data-stat
-                className="border-t border-white/15 pt-6 opacity-0"
+                className="group border-t border-white/15 pt-5 opacity-0 transition-colors duration-500 hover:border-white/40 md:pt-6"
               >
-                <div className="text-display-sm font-medium leading-none tabular-nums">
+                <div className="text-[clamp(3rem,6vw,5rem)] font-medium leading-none tabular-nums tracking-[-0.03em]">
                   <span data-num={num} data-suffix={suffix}>
                     {stat.value}
                   </span>
                 </div>
-                <p className="mt-4 max-w-[180px] text-sm leading-snug text-white/50">
+                <p className="mt-3 max-w-[180px] text-sm leading-snug text-white/50 md:mt-4">
                   {stat.label}
                 </p>
               </div>

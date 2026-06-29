@@ -13,7 +13,7 @@ export const profile = {
   // Hero anchor line (placeholder — finalize together once seen in context)
   heroLine: "Less. But louder.",
   heroSub:
-    "Designer & motion director with 8 years behind the frame. I build visual systems that move — and ship them too.",
+    "Designer & motion director with 8 years behind the frame. I build visual systems that move and ship them too.",
   email: "yashkaul777@gmail.com",
 } as const;
 
@@ -26,7 +26,7 @@ export const heroStatement = {
   kicker: "Designer · Motion · Direction",
   lines: [
     { text: "Design that", accent: false },
-    { text: "moves — and", accent: false },
+    { text: "moves and", accent: false },
     { text: "ships.", accent: true },
   ],
 } as const;
@@ -62,7 +62,7 @@ export type WorkItem = {
 export const work: WorkItem[] = [
   {
     id: "001",
-    title: "Toronto Film Awards — Official Trailer",
+    title: "Toronto Film Awards : Official Trailer",
     client: "Toronto Film Awards",
     year: "2024",
     discipline: "Direction · Motion · Edit",
@@ -72,7 +72,7 @@ export const work: WorkItem[] = [
   },
   {
     id: "002",
-    title: "Chary — Visual Identity System",
+    title: "Chary : Visual Identity System",
     client: "Chary",
     year: "2024",
     discipline: "Brand · Motion",
@@ -82,7 +82,7 @@ export const work: WorkItem[] = [
   },
   {
     id: "003",
-    title: "Bikram Dosanjh — Promotional Campaign",
+    title: "Bikram Dosanjh : Promotional Campaign",
     client: "Bikram Dosanjh",
     year: "2023",
     discipline: "Direction · Edit",
@@ -92,7 +92,7 @@ export const work: WorkItem[] = [
   },
   {
     id: "004",
-    title: "Untitled — Editorial Poster Series",
+    title: "Untitled : Editorial Poster Series",
     client: "Personal",
     year: "2024",
     discipline: "Graphic · Typography",
@@ -102,7 +102,7 @@ export const work: WorkItem[] = [
   },
   {
     id: "005",
-    title: "Freelance — Brand & Social Systems",
+    title: "Freelance : Brand & Social Systems",
     client: "US Clients",
     year: "2023",
     discipline: "Brand · UI/UX",
@@ -112,7 +112,7 @@ export const work: WorkItem[] = [
   },
   {
     id: "006",
-    title: "Reels — Short-form Motion Direction",
+    title: "Reels : Short Form Motion Direction",
     client: "Various Creators",
     year: "2024",
     discipline: "Motion · Edit · Sound",
@@ -135,9 +135,9 @@ export const stats: Stat[] = [
 ];
 
 export const manifesto = [
-  "I don't decorate —",
+  "I don't decorate.",
   "I direct.",
-  "Every frame, every transition, every system —",
+  "Every frame, every transition, every system:",
   "intentional. Eight years in, still obsessed.",
 ] as const;
 
@@ -150,7 +150,7 @@ export type Capability = {
 export const capabilities: Capability[] = [
   {
     title: "Motion Design",
-    detail: "Title sequences, brand motion, short-form direction.",
+    detail: "Title sequences, brand motion, short form direction.",
     tools: ["After Effects", "Premiere Pro"],
   },
   {
@@ -165,7 +165,7 @@ export const capabilities: Capability[] = [
   },
   {
     title: "Video & Direction",
-    detail: "Editing, color, sound, end-to-end creative direction.",
+    detail: "Editing, color, sound, complete creative direction.",
     tools: ["Premiere Pro", "Audition", "After Effects"],
   },
 ];
@@ -192,7 +192,7 @@ export const socials: SocialLink[] = [
 ];
 
 export const codingHighlights = [
-  "B.Tech CS — currently 3rd year",
+  "B.Tech CS : currently 3rd year",
   "Design Systems with React + TypeScript",
   "This site, built from scratch",
 ] as const;
